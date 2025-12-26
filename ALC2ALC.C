@@ -1,6 +1,6 @@
 /*****************************************************************************
  *                                                                           *
- *   ALC2ALC.C                                                      V3.11    *
+ *   ALC2ALC.C                                                      V3.12    *
  *                                                                           *
  *   Copyright (C) 1991-1992 GALACTICOMM, Inc.    All Rights Reserved.       *
  *                                                                           *

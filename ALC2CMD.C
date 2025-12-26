@@ -1,6 +1,6 @@
 /*****************************************************************************
  *                                                                           *
- *   ALC2CMD.C                                                      V3.11    *
+ *   ALC2CMD.C                                                      V3.12    *
  *                                                                           *
  *   ALCHEMY II: Main player command parser and command handling routines.   *
  *                                                                           *

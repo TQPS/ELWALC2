@@ -1,6 +1,6 @@
 /*****************************************************************************
  *                                                                           *
- *   ALC2COM.C (ALCCOM.C)                                           V3.11    *
+ *   ALC2COM.C (ALCCOM.C)                                           V3.12    *
  *                                                                           *
  *   ALCHEMY II: Computer handling routines.                                 *
  *                                                                           *

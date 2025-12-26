@@ -1,6 +1,6 @@
 /*****************************************************************************
  *                                                                           *
- *   ALC2.H                                                         V3.11    *
+ *   ALC2.H                                                         V3.12    *
  *                                                                           *
  *   ALCHEMY II: Header file of game structures, definitions, and externs.   *
  *                                                                           *
@@ -58,7 +58,7 @@
 #include "elwalc2d.h"
 #include "elwalc2c.h"
 
-#define VERSION "3.11"   /* v3.1 - R. Hadsall 4/2/2021 v3.11 - RH 8/4/2024 */
+#define VERSION "3.12"   /* v3.1 - R. Hadsall 4/2/2021 v3.11 - RH 8/4/2024 v3.12 - RH 12/26/2025 data file fixes */
 
 #define HOURSPD 21600    /* hours per day, in seconds  (hrs*3600)          */
 #define NDAYSPM    24    /* number of days per month                       */
@@ -178,20 +178,22 @@ struct aplayr {
      SHORT naobjs;            /*   number of objects currently held        */ // 122-123
      struct alcobj *apobjs[MXPITS];     /* currently held objects          */ // 124-147
      SHORT gold;              /*   currency in the game                    */ // 148-149
-     AppRou approu;           /*   player's once-per-turn called routine   */ // 150-153
-     SHORT rouctr;            /*   general purpose counter for (*approu)() */ // 154-155
-     SHORT counts[NPCNTS];    /*   various counters (protections, etc.)    */ // 156-167
-     LONG flags;              /*   various bit "flags"                     */ // 168-171
-     LONG pflags;             /*   various flags set by potions            */ // 172-175
-     SHORT seemod;            /*   used for concatenations to "see stgs"   */ // 176-177
-     SHORT peectr;            /*   "pee counter" for number of potions     */ // 178-179
-     SHORT potctr;            /*   "potion counter" for slot chamber       */ // 180-181
-     SHORT macros;            /*   number of commands entered this turn    */ // 182-183
-     SHORT modno;             /*   current modem number                    */ // 184-185
-     CHAR spouse[ALSSIZ];     /*   user-id of spouse (or \0'd out)         */ // 186-195
-     SHORT pickle;            /*   pickle status variable                  */ // 196-197
-     CHAR spare[252-198];     /*   spare space, decrease when adding       */ // 198-251
-} *alcarr,                    /* base address of dynamic array of players  */ // size 252
+     CHAR pack[2];            /*   structure packing                       */ // xxxxxxx 150-151
+     AppRou approu;           /*   player's once-per-turn called routine   */ // 150-153 152-155
+     SHORT rouctr;            /*   general purpose counter for (*approu)() */ // 154-155 156-157
+     SHORT counts[NPCNTS];    /*   various counters (protections, etc.)    */ // 156-167 158-169
+     CHAR pack2[2];           /*   structure packing                       */ // xxxxxxx 170-171
+     LONG flags;              /*   various bit "flags"                     */ // 168-171 172-175
+     LONG pflags;             /*   various flags set by potions            */ // 172-175 176-179
+     SHORT seemod;            /*   used for concatenations to "see stgs"   */ // 176-177 180-181
+     SHORT peectr;            /*   "pee counter" for number of potions     */ // 178-179 182-183
+     SHORT potctr;            /*   "potion counter" for slot chamber       */ // 180-181 184-185
+     SHORT macros;            /*   number of commands entered this turn    */ // 182-183 186-187
+     SHORT modno;             /*   current modem number                    */ // 184-185 188-189
+     CHAR spouse[ALSSIZ];     /*   user-id of spouse (or \0'd out)         */ // 186-195 190-199
+     SHORT pickle;            /*   pickle status variable                  */ // 196-197 200-201
+     CHAR spare[252-202];     /*   spare space, decrease when adding       */ // 198-251 202-251 was 252-198 in wg32, now 252-202 for MajorBBS V10
+} *alcarr,                    /* base address of dynamic array of players  */ // size 252 in wg32, but 4 packed bytes; reduced spare kept at 252. But offsets are different...
   *alcptr,                    /* pointer to alcarr[usrnum] structure       */
   *alcaux,                    /* global pointer for "other" player struct. */
   *alcspa;                    /* general purpose player structure pointer  */

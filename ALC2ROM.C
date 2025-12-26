@@ -1,6 +1,6 @@
 /*****************************************************************************
  *                                                                           *
- *   ALC2ROM.C                                                      V3.11    *
+ *   ALC2ROM.C                                                      V3.12    *
  *                                                                           *
  *   ALCHEMY II: Room handler routine interface.                             *
  *                                                                           *

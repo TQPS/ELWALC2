@@ -1,6 +1,6 @@
 /*****************************************************************************
  *                                                                           *
- *   ALC2UTL.C                                                      V3.11    *
+ *   ALC2UTL.C                                                      V3.12    *
  *                                                                           *
  *   ALCHEMY II: Assorted low-level game utils and structures/variables.     *
  *                                                                           *

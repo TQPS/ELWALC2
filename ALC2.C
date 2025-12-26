@@ -1,6 +1,6 @@
 /*****************************************************************************
  *                                                                           *
- *   ALC2.C                                                         V3.11    *
+ *   ALC2.C                                                         V3.12    *
  *                                                                           *
  *   ALCHEMY II: Game mainline and The Major BBS module interface.           *
  *                                                                           *
@@ -132,7 +132,7 @@ init__elwalc2(VOID)             /* init of alchemy II                        */
      iactrl();
      mainat();     
 
-     shocst(spr("ELW Alchemy II v%s",VERSION),"(C) Copyright 2024 Elwynor Technologies - www.elwynor.com");
+     shocst(spr("ELW Alchemy II v%s",VERSION),"(C) Copyright 2025 Elwynor Technologies - www.elwynor.com");
 }
 
 static GBOOL

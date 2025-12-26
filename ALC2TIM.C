@@ -1,6 +1,6 @@
 /*****************************************************************************
  *                                                                           *
- *   ALC2TIM.C                                                      V3.11    *
+ *   ALC2TIM.C                                                      V3.12    *
  *                                                                           *
  *   ALCHEMY II: Real-time kicks/related routines for game timers/controls.  *
  *                                                                           *
@@ -77,7 +77,7 @@ CHAR *phases[NMSTGS]={
      "waning"
 };
 
-SHORT night=0;           /* global variable for nighttime                  */
+SHORT night=0;                     /* global variable for nighttime        */
 SHORT bskbal=0;                    /* basketball status, on or off         */
 SHORT lfgopn=0;                    /* gate at lit forest, open or closed   */
 SHORT movstg=0;                    /* current stage of the "movie"         */
@@ -95,13 +95,18 @@ SHORT domes[6];                    /* current status of dome pedestals     */
 VOID
 iactrl(VOID)
 {
-     acbb=dfaOpen("elwalc2.dat",sizeof(struct alctrl),NULL);
+     acbb=dfaOpen("elwalc2.dat",sizeof(struct alctrl),NULL); // RH: This file now has key as zstring not string
      if (!dfaAcqEQ(&alctrl,"key",0)) {
           setmem(&alctrl,sizeof(struct alctrl),0);
-          strcpy(alctrl.key,"key");
+          memset(alctrl.key, 0, 4); // RH: let's set the entire key to zero first
+          memcpy(alctrl.key, "key", 3); //RH:  strcpy(alctrl.key, "key");
           alctrl.time=1;
+          alctrl.day = 0; // RH
+          alctrl.month = 0; // RH
           alctrl.year=FIRSTYR;
           alctrl.rmoonc=alctrl.amoonc=4;
+          alctrl.weather = 0; //RH: This is not used in the game however
+          alctrl.stropn = 1; // RH: Assume strange building is open at start per code below when rmoonc and amoonc are both 4
           dfaInsert(&alctrl);
      }
      incday();

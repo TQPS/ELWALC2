@@ -1,6 +1,6 @@
 /*****************************************************************************
  *                                                                           *
- *   ALC2POT.C                                                      V3.11    *
+ *   ALC2POT.C                                                      V3.12    *
  *                                                                           *
  *   ALCHEMY II: Object-routine array, potion combination/item routines.     *
  *                                                                           *

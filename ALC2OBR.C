@@ -1,6 +1,6 @@
 /*****************************************************************************
  *                                                                           *
- *   ALC2OBR.C                                                      V3.11    *
+ *   ALC2OBR.C                                                      V3.12    *
  *                                                                           *
  *   ALCHEMY II: Object handler routine interface.                           *
  *                                                                           *

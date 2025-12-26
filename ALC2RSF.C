@@ -1,6 +1,6 @@
 /*****************************************************************************
  *                                                                           *
- *   ALC2RSF.C                                                      V3.11    *
+ *   ALC2RSF.C                                                      V3.12    *
  *                                                                           *
  *   ALCHEMY II: Room-specific  game structures, definitions, and externs.   *
  *                                                                           *

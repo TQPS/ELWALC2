@@ -12,8 +12,8 @@
        /_/ /_/ /_/\___/  /_/ /_/\__,_/_/ /_/\__, /\____/|___/\___/_/
                                            /____/
                                            
-                                 version 3.11
-                 Copyright (c) 2021-2024 Elwynor Technologies
+                                 version 3.12
+                 Copyright (c) 2021-2025 Elwynor Technologies
 </pre>
 
 ## THE BACK STORY...
