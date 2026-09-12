@@ -96,7 +96,7 @@ VOID
 iactrl(VOID)
 {
      acbb=dfaOpen("elwalc2.dat",sizeof(struct alctrl),NULL); // RH: This file now has key as zstring not string
-     if (!dfaAcqEQ(&alctrl,"key",0)) {
+     if (!dfaAcqLO(&alctrl,0)) {
           setmem(&alctrl,sizeof(struct alctrl),0);
           memset(alctrl.key, 0, 4); // RH: let's set the entire key to zero first
           memcpy(alctrl.key, "key", 3); //RH:  strcpy(alctrl.key, "key");
@@ -346,7 +346,7 @@ sunrise(SHORT stage)
           }
           night=0;
           dfaSetBlk(acbb);
-          dfaAcqEQ(NULL,"key",0);
+          dfaAcqLO(NULL,0);
           dfaUpdate(&alctrl);
      }
 }
