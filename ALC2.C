@@ -151,6 +151,9 @@ static GBOOL
 alch2(VOID)                   /* status routine if selected for Alchemy II */
 {
      SHORT i,j=0,len,bad=0;
+     CHAR clrstg[3];
+
+     strcpy(clrstg,"\f\r");
 
      alcptr=&alcarr[usrnum];
      aplptr=&alocs[alcptr->prmloc];
@@ -301,7 +304,7 @@ alch2(VOID)                   /* status routine if selected for Alchemy II */
      case 8:
           btumil(usrnum,DFTIMX);
           btupmt(usrnum,0);
-          btuxmt(usrnum,"\r");
+          btuxmt(usrnum,clrstg);
           setmbk(amb);
           epaloc(STALOC,HELNEW);
           usrptr->substt=PLAYSS;
@@ -344,11 +347,14 @@ bckovr(SHORT number)                /* back over XX number of spaces            
 {
 #define MAXWID 250
      SHORT save,i;
+     CHAR bckstg[4];
+
+     strcpy(bckstg,"\b \b");
 
      save=usaptr->scnwid;
      usaptr->scnwid=MAXWID;
      for (i=0 ; i < number ; i++) {
-          btuxmt(usrnum,"\b \b");
+          btuxmt(usrnum,bckstg);
      }
      usaptr->scnwid=(CHAR)save;
 }
